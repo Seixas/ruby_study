@@ -121,3 +121,7 @@ DELETE- Delete   -DELETE
 recursos - basicamente são dos models config/routes.rb
 rails/info/routes
 guides.rubyonrails.org/routing.html#crud-verbs-and-actions
+
+collection_select(object, method, collection, value_method, text_method, options = {}, html_options = {})
+collection_select(:contact, :kind_id, Kind.all(@ instanciamos no controller @var = Kind.all), :id, :description, options = {}, html_options = {})
+
