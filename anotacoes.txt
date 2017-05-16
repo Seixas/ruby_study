@@ -1,0 +1,123 @@
+IRB - Interpretador Ruby
+Pry - REPL = read eval print loop - uma altertativa ao IRB, mais poderosa, colore palavras por tipo e etc, é uma gem
+ERB - Embedded Ruby
+
+puts = print
+
+
+
+oo
+Variáveis - declaro uma e reservo um espaço na memoria ram, possui um endereço, "espaço de memoria reservado com um nome"
+Tipos Primitivos - Fixnum(int no ruby), Float, String, True-False
+Tipos Complexos - Classes e Objetos(no ruby é tudo obj)
+Classe é a Forma, Objeto é aquilo que já está pronto
+Classe Possui - Atributos => caracteristicas, Métodos => ações(funções)
+a.class => perguntando a variavel qual a classe dela
+a.object_id => mostrando o identificador
+a. TAB => mostramos as possibilidades, todos os metodos
+
+Herança
+Reuso de uma classe
+Tudo que foi definido para uma classe vai ser aproveitado em outra classe
+Representa especialização
+Um tipo mais genérico cujas características serão
+herdadas
+por outra classe
+Classe A e classe B
+Bherdade A
+B é subtipo de A
+B é subclasse A
+Todos os atributos e métodos definidos em Atambem existem em B
+
+Encapsulamento
+O conceito do encapsulamento consiste em “esconder” os atributos da classe de quem for utilizá-la. Isso se deve por dois motivos principais.
+
+Associação de Classes
+são os relacionamentos entre classes, 
+Herança é representando como "é um", Composição como "tem um"
+Associação -> Por exemplo, quando uma associação entre a classe ?Pessoa? e a classe ?Endereco?, diz que uma pessoa ?tem um? endereço.
+Agregação -> as partes pode existem sem o todo. 
+Composição -> as partes não existem sem o todo
+
+Visibilidade(java)
+ public
+Membros acessíveis por qualquer classe
+ proteced 
+Membros acessíveis por classe esubclasses
+ private
+Membros acessíveis apenas por objetos da própria classe
+ default (pacote)
+Membros acessíveis pode classes domesmo pacoteesubclasse
+
+
+Polimorfismo
+Muda comportamento
+Método executado depende da classe do objeto
+mesma chamada executa métodos diferentes
+obj.metodo() vai executar método que foi definido para
+classe do objeto referenciado
+por obj
+Permite executar métodos de subclasses mesmo sem conhecê-las
+Usado junto com sobrescrita => É possível chamar o método da superclasse
+Palavra super 
+super.metodo();
+Pode ser usado em qualquer método
+Podemos sobrescrever o método para adicionar funcionalidade, mantendo a funcionalidade existente
+
+Classes abstratas
+Não podem ser instanciadas
+Usadas com herança
+Definir superclasse com características e comportamentocomuns e cada subclasse implementa suasespecificidades
+Não existem animais da classe mamífero, apenas desuas subclass
+Métodos podem ser abstratos
+Não possuem implementação
+Devem ser implementados pelas subclasses
+Ou estas também serão abstratas
+Se uma classe possuir pelo menos um métodoabstrato, ela deve ser abstrata
+Classe abstratas podem ter métodos implementados
+
+Classes finais
+Não podem ser herdadas
+Não possuem subclasses
+Não podem ser abstratas
+Por consequencia, não possuemmétodos abstratos
+Palavra final antes de class: public final class Gato{
+
+
+Rails: ORM -> ActiveRecord
+Scaffold, models
+rails generate scaffold <Modelo(Ex.:Contato)> <caracteristica>:<tipo>
+EX.: rails g scaffold Phone phone:string obs:text contact:references(foreignkey)
+
+rake db:create
+rake db:migrate
+
+rails server -p $PORT -b $IP (isso no Cloud9)
+ctrl+c = cancela
+ctrl+l = limpa
+
+https://link/<modelcontroller> podemos cadastrar direto pelo navegador
+
+rails g controller <controller> <action(metodos como o def index)>
+EX.: rails g controller home index
+
+config>routes.rb
+root 'home#index' #we set root page as home(controller)#index(action)
+
+ERB
+<% é processado e <%= é processado e mostrado
+<% link_to "Texto", <views>_path %>
+APIdock
+<%= mostrar_meu_nome %> : podemos criar um helper por funções
+
+HTTP - Verbos GET(pedir,pegar, aparece no html)/POST(postar,enviar por baixo dos panos)
+
+REST - Transferência de Estado Representacional
+verbos - CRUD    - SQL
+POST  - Create   -INSERT
+GET   - Retrieve -SELECT
+PUT   - Update   -UPDATE
+DELETE- Delete   -DELETE
+recursos - basicamente são dos models config/routes.rb
+rails/info/routes
+guides.rubyonrails.org/routing.html#crud-verbs-and-actions

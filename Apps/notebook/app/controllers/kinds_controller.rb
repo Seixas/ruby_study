@@ -3,7 +3,7 @@ class KindsController < ApplicationController
 
   # GET /kinds
   # GET /kinds.json
-  def index
+  def index # mesmo nome do arquivo em views
     @kinds = Kind.all
   end
 
